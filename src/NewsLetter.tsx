@@ -81,21 +81,19 @@ export const NewsLetter: FC<NewsLetterProps> = () => {
           </Box>
         </Card>
       </Box>
+    ) : (
+      < Box sx={{ display: 'flex', justifyContent: 'center', alignItems: { lg: 'center', xs: 'flex-start' }, backgroundColor: { lg: '#36384d', xs: 'none' }, height: '100vh' }} >
+        <Card raised sx={{ borderRadius: { lg: '30px', xs: 0 }, maxWidth: '503px', maxHeight: { lg: '520px', xs: 'auto' }, my: { lg: '72px', xs: 0 } }} >
+          <Box sx={{ display: 'flex', flexDirection: 'column', mx: { lg: '59px', xs: '26px' }, mt: { lg: '50px', xs: 20 }, mb: { lg: '50px', xs: '50px' }, color: '#252841' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stopColor="#FF6A3A" /><stop offset="100%" stopColor="#FF527B" /></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)" /><path stroke="#FFF" strokeWidth="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" /></g></svg>
+            <Typography variant='h3' sx={{ fontWeight: 'bold', mb: 3, mt: 5, lineHeight: 1 }}>Thanks for subscribing!</Typography>
+            <Typography variant='subtitle2' sx={{ fontSize: { lg: 14, xs: 16 }, mb: { lg: 4.5, xs: 33 } }}>A conformation email has been sent to <b>{email}</b>. Please open it and click the button inside to confirm your subscription.</Typography>
+            <Button variant='contained' onClick={() => { unsubscribe() }} sx={{ height: '56px', mb: 2, borderRadius: '10px' }}>
+              <Typography variant='subtitle2' sx={{ fontSize: '15px', fontWeight: 'bold' }}>Dismiss message</Typography>
+            </Button>
+          </Box>
+        </Card >
+      </Box >
     )
-      :
-      (
-        < Box sx={{ display: 'flex', justifyContent: 'center', alignItems: { lg: 'center', xs: 'flex-start' }, backgroundColor: { lg: '#36384d', xs: 'none' }, height: '100vh' }} >
-          <Card raised sx={{ borderRadius: { lg: '30px', xs: 0 }, maxWidth: '503px', maxHeight: { lg: '520px', xs: 'auto' }, my: { lg: '72px', xs: 0 } }} >
-            <Box sx={{ display: 'flex', flexDirection: 'column', mx: { lg: '59px', xs: '26px' }, mt: { lg: '50px', xs: 20 }, mb: { lg: '50px', xs: '50px' }, color: '#252841' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stopColor="#FF6A3A" /><stop offset="100%" stopColor="#FF527B" /></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)" /><path stroke="#FFF" strokeWidth="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" /></g></svg>
-              <Typography variant='h3' sx={{ fontWeight: 'bold', mb: 3, mt: 5, lineHeight: 1 }}>Thanks for subscribing!</Typography>
-              <Typography variant='subtitle2' sx={{ fontSize: { lg: 14, xs: 16 }, mb: { lg: 4.5, xs: 33 } }}>A conformation email has been sent to <b>{email}</b>. Please open it and click the button inside to confirm your subscription.</Typography>
-              <Button variant='contained' onClick={() => { unsubscribe() }} sx={{ height: '56px', mb: 2, borderRadius: '10px' }}>
-                <Typography variant='subtitle2' sx={{ fontSize: '15px', fontWeight: 'bold' }}>Dismiss message</Typography>
-              </Button>
-            </Box>
-          </Card >
-        </Box >
-      )
   )
 }
