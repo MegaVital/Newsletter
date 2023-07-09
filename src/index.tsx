@@ -46,12 +46,12 @@ theme.typography.h6 = {
 };
 
 root.render(
-  <React.Fragment>
+  <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NewsLetter />
     </ThemeProvider>
-  </React.Fragment>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
